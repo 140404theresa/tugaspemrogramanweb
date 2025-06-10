@@ -1,0 +1,267 @@
+body {
+    font-family: 'Cambria', Arial, sans-serif;
+    background-image: url('WhatsApp Image 2025-06-01 at 23.10.42.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- Gaya baru untuk h1 di luar container (SPECTRA BIRTHDAY PARTY) --- */
+h1:not(.container h1) { /* Pilih h1 yang BUKAN di dalam .container */
+    font-size: 3em;
+    margin: 10px 0 5px 0;
+    text-align: left;
+    position: absolute;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Gaya baru untuk paragraf (Hai kamu!...) --- */
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    position: absolute;
+    font-size: 1.2em;
+    color: #8B4513;
+    text-align: left;
+
+}
+
+.container {
+
+    background: rgba(189, 189, 189, 0.8);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(109, 64, 38, 0.991);
+    width: 60;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+
+}
+
+/* --- Gaya untuk h1 di dalam .container ("Daftar Tugas") --- */
+.container h1 { /* Ini akan menargetkan "Daftar Tugas" */
+    color: #333; /* Warna teks */
+    font-size: 2.2em; /* Ukuran font agar mirip "Daftar undangan hadir" */
+    font-weight: bold; /* Teks lebih tebal */
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0; /* Hapus margin-bottom, gunakan gap dari parent .container */
+    width: 90%;
+    max-width: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px; /* Padding lebih besar */
+    border: 1px solid #aaa; /* Border abu-abu tipis */
+    border-radius: 8px; /* Sudut membulat */
+    font-size: 16px;
+    background-color: white; /* Background putih */
+    color: #333;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+button {
+    padding: 12px 20px; /* Padding tombol */
+    background-color: #8B4513; /* Warna coklat seperti di gambar Spectra */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #A0522D; /* Warna hover coklat lebih gelap */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.8); /* Background item daftar lebih transparan */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s forwards;
+    color: #333;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li.completed {
+    text-decoration: line-through;
+    background-color: rgba(220, 220, 220, 0.8);
+    color: #666;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.3s ease;
+}
+
+/* --- Media queries untuk responsif (sesuaikan dengan nilai baru) --- */
+@media (max-width: 600px) {
+    body {
+        padding-top: 150px; /* Sesuaikan padding-top body untuk layar kecil */
+    }
+    h1:not(.container h1) { /* SPECTRA BIRTHDAY PARTY */
+        font-size: 2.2em;
+        top: 30px;
+        left: 30px;
+    }
+    .intro-text {
+        font-size: 1em;
+        top: 100px;
+        left: 30px;
+        width: 90%;
+    }
+    .container {
+        max-width: 90%;
+        padding: 20px;
+        gap: 20px;
+    }
+    .container h1 { /* Daftar Tugas */
+        font-size: 1.8em;
+    }
+    .input-container {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+    ul {
+        width: 100%;
+    }
+    li {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 280px; /* Sesuaikan padding-top body untuk layar tablet/desktop */
+    }
+    h1:not(.container h1) { /* SPECTRA BIRTHDAY PARTY */
+        top: 70px;
+        left: 70px;
+    }
+    .intro-text {
+        top: 180px;
+        left: 70px;
+        width: 500px;
+    }
+    .container {
+        max-width: 600px;
+        padding: 40px;
+    }
+    .container h1 { /* Daftar Tugas */
+        font-size: 2.5em;
+    }
+    .input-container {
+        max-width: 500px;
+    }
+    ul {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding-top: 300px; /* Sesuaikan padding-top body untuk desktop besar */
+    }
+    h1:not(.container h1) { /* SPECTRA BIRTHDAY PARTY */
+        top: 80px;
+        left: 80px;
+    }
+    .intro-text {
+        top: 200px;
+        left: 80px;
+        width: 600px;
+    }
+    .container {
+        max-width: 700px;
+        padding: 50px;
+    }
+    .container h1 { /* Daftar Tugas */
+        font-size: 2.8em;
+    }
+    .input-container {
+        max-width: 600px;
+    }
+    ul {
+        max-width: 600px;
+    }
+}
